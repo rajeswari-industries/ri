@@ -447,7 +447,10 @@ footer p {
         padding: 0px;
         box-sizing: border-box;
     }
-
+    #scroll {
+        font-size: 50px;
+        background-color: #7fffd4;
+    }
     .navbar {
         display: none;
     }
@@ -792,7 +795,10 @@ footer p {
         box-sizing: border-box;
         font-family: 'Trebuchet MS', Arial, sans-serif;
     }
-
+    #scroll {
+        font-size: 35px;
+        background-color: #7fffd4;
+    }
     h3, h2 {
         margin: 0;
         font-size: 30px;
