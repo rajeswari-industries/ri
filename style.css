@@ -795,9 +795,8 @@ footer p {
         box-sizing: border-box;
         font-family: 'Trebuchet MS', Arial, sans-serif;
     }
-    #scroll {
-        font-size: 35px;
-        background-color: #7fffd4;
+    #scroll{
+        font-size: 40px;
     }
     h3, h2 {
         margin: 0;
