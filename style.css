@@ -258,6 +258,15 @@ h2 {
     padding: 20px;
 
 }
+.product-container5 {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    background: lavenderblush;
+    padding: 20px;
+
+}
 
 .product {
     background-color: #fff;
@@ -589,7 +598,13 @@ footer p {
         font-size: 9px;
     }
 
-    .product-container1 , .product-container2 , .product-container3, .product-container4 {
+    .p1_
+    {
+        background: lavenderblush;
+        padding: 10px;
+        font-size: 10px;
+    }
+    .product-container1 , .product-container2 , .product-container3, .product-container4,.product-container5 {
         display: grid;
         justify-content: space-around;
         grid-template-columns: repeat(3, 1fr);
@@ -978,6 +993,12 @@ footer p {
         font-size: 50px;
         margin-bottom: 30px;
         color: black;
+    }
+    .p1_
+    {
+        background: lavenderblush;
+        padding: 10px;
+        font-size: 20px;
     }
 
     .product-container1,
