@@ -447,9 +447,8 @@ footer p {
         padding: 0px;
         box-sizing: border-box;
     }
-    #scroll {
-        font-size: 50px;
-        background-color: #7fffd4;
+    .header{
+        position: fixed;
     }
     .navbar {
         display: none;
@@ -500,10 +499,9 @@ footer p {
     }
 
     .cnt {
-        padding-top: 100px;
+        padding-top: 120px;
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         background: aquamarine;
-        padding: 20px;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -795,9 +793,6 @@ footer p {
         box-sizing: border-box;
         font-family: 'Trebuchet MS', Arial, sans-serif;
     }
-    #scroll{
-        font-size: 40px;
-    }
     h3, h2 {
         margin: 0;
         font-size: 30px;
@@ -813,6 +808,7 @@ footer p {
         padding: 15px 20px;
         color: white;
         height: 100px;
+        position: fixed;
     }
 
     .menu-toggle button {
@@ -824,7 +820,7 @@ footer p {
     }
 
     .logo h2 {
-        font-size: 50px;
+        font-size: 40px;
         margin: 0;
     }
 
@@ -834,7 +830,7 @@ footer p {
     }
 
     .navbar a {
-        font-size: 28px;
+        font-size: 20px;
         color: black;
         text-decoration: none;
         text-transform: capitalize;
@@ -908,6 +904,7 @@ footer p {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         background: aquamarine;
         padding: 20px;
+        padding-top: 100px;
         display: flex;
         align-items: center;
         justify-content: space-around;
