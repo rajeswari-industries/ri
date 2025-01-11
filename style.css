@@ -9,7 +9,9 @@ h3,
 h2 {
     margin: 0;
 }
-
+.telugu-font {
+    font-family: 'Noto Sans Telugu', 'Gautami', sans-serif;
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -462,12 +464,24 @@ footer p {
     .navbar {
         display: none;
     }
-
+    .sign select{
+        width: 150px;
+        height: 50px;
+        font-size: 25px;
+        border: 0;
+        border-radius: 10px;
+    }
+    .sign select option{
+        width: 100px;
+        font-size: 15px;
+    }
     .menu-toggle button {
         display: block;
         font-size: 50px;
     }
-
+    .telugu-font {
+        font-family: 'Noto Sans Telugu', 'Gautami', sans-serif;
+    }
     .menu-item {
         color: black;
         text-decoration: none;
@@ -812,6 +826,9 @@ footer p {
         margin: 0;
         font-size: 30px;
     }
+    .telugu-font {
+    font-family: 'Noto Sans Telugu', 'Gautami', sans-serif;
+}
     .menu-toggle{
         display:none;
     }
@@ -825,7 +842,17 @@ footer p {
         height: 100px;
         position: fixed;
     }
-
+    .sign select{
+        width: 150px;
+        height: 50px;
+        font-size: 25px;
+        border: 0;
+        border-radius: 10px;
+    }
+    .sign select option{
+        width: 100px;
+        font-size: 20px;
+    }
     .menu-toggle button {
         background: none;
         border: none;
@@ -1020,11 +1047,6 @@ footer p {
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         text-align: center;
         transition: transform 0.3s ease-in-out;
-    }
-
-    .product:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
     }
 
     .product img {
