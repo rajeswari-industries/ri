@@ -105,7 +105,7 @@ function lngChange() {
         r8.innerHTML = "About Us"
         r9.innerHTML = "Contact Us"
         r10.innerHTML = "Rajeswari Industries"
-        r11.innerHTML = "Explore our Brass Items."
+        r11.innerHTML = "Explore our <br> Brass Items."
         r12.innerHTML = "Established in 1960, India RAJESWARI INDUSTRIES has gained immense expertise in supplying & trading of Bushes, Temple Bells,Hand Bells etc. The manufacturing company is located in Ajjaram, Andhra Pradesh and is one of the leading sellers of listed products. Buy Bushes, Temple Bells, Hand Bells etc. in bulk from us for the best quality products and service."
         r13.innerHTML = "See Making Process"
         r14.innerHTML = "Our Brass Collection"
