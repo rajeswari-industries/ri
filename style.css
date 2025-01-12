@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -20,7 +20,7 @@
 
 .logo h2 {
     font-size: xx-large;
-    color: red;
+    color: white;
 }
 
 .navbar {
@@ -85,7 +85,7 @@
 
 .cnt button {
     padding: 10px 20px;
-    background: #68f668;
+    background: #2196F3;
     color: white;
     border: none;
     border-radius: 5px;
@@ -162,7 +162,7 @@
     width: 100%;
     height: auto;
     border-radius: 8px;
-    background-color: rgb(13, 255, 0);
+    background-color: yellow;
     transition: 1.5s;
 }
 
@@ -186,7 +186,7 @@
 }
 
 .about {
-    background-color: rgb(104, 246, 104);
+    background-color: rgb(104, 246, 104); 
     padding: 20px;
 }
 
@@ -510,7 +510,8 @@ footer p {
 
     .product details {
         background: #FFC107;
-        display: block;
+        display: inline-block;
+        font-size: 2rem;
     }
 
     .about {
@@ -637,14 +638,6 @@ footer p {
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    .product details {
-        background: rgb(104, 246, 104);
-        display: inline;
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-size: 13px;
     }
 
     footer p {
