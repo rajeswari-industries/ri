@@ -329,8 +329,9 @@ footer p {
     }
 
     .logo h2 {
-        font-size: xx-large;
+        font-size: 35px;
         color: white;
+        max-width: 115px;
     }
 
     .navbar {
