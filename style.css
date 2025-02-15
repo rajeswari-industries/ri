@@ -332,7 +332,7 @@ footer p {
     }
 
     .logo h2 {
-        font-size: xx-large;
+        font-size: 50px;
         color: white;
     }
 
@@ -344,12 +344,13 @@ footer p {
 
     .navbar a {
         margin-left: 30px;
-        font-size: 20px;
+        font-size: 30px;
+        font-weight: 900;
         color: black;
         text-decoration: none;
         text-transform: capitalize;
         padding: 10px 20px;
-        background-color: #fff;
+        background-color: transparent;
         border-radius: 5px;
         transition: background-color 0.3s ease;
     }
