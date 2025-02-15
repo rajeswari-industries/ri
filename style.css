@@ -345,8 +345,8 @@ footer p {
     .navbar a {
         margin-left: 30px;
         font-size: 30px;
-        font-weight: 900;
-        color: black;
+        font-weight: 600;
+        color: white;
         text-decoration: none;
         text-transform: capitalize;
         padding: 10px 20px;
@@ -380,9 +380,9 @@ footer p {
     .cnt p {
         margin: 15px 0;
         line-height: 1.5;
-        max-width: 350px;
+        max-width: 380px;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 26px;
     }
 
     .cnt button {
@@ -545,11 +545,11 @@ footer p {
     }
 
     .about-content p {
-        font-size: 18px;
-        line-height: 1.8;
+        font-size: 14px;
+        line-height: 1.6;
         color: #fff;
         margin: 0 auto 15px;
-        max-width: 865px;
+        max-width: 875px;
     }
 
     .about-content .imgs {
@@ -558,6 +558,9 @@ footer p {
         justify-content: center;
         background-color: aquamarine;
         border-radius: 10px;
+    }
+    .about-content .imgs:hover {
+        background-color:#f59292;
     }
 
     .about-content span {
