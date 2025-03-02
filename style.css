@@ -118,7 +118,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Quantity Controls */
 .quantity-controls {
     display: flex;
     align-items: center;
@@ -126,7 +125,7 @@ body {
 }
 
 .quantity-controls button {
-    background-color: #4CAF50; /* Light Green */
+    background-color: #4CAF50; 
     color: white;
     border: none;
     padding: 5px 10px;
@@ -137,7 +136,7 @@ body {
 }
 
 .quantity-controls button:hover {
-    background-color: #388E3C; /* Darker Green */
+    background-color: #388E3C; 
 }
 
 .quantity-controls span {
@@ -245,6 +244,94 @@ footer {
     gap: 10px;
 }
 
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 85%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content.show {
+    transform: scale(1);
+    opacity: 1;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #ff4d4d;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+#modal-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 25px 0px 25px 0px;
+    background-color: antiquewhite;
+}
+
+#modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1b1f3b;
+}
+
+#modal-description {
+    font-size: 1rem;
+    color: #000;
+    margin: 10px 0;
+}
+
+#modal-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00c897;
+}
+.modal-content {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
 
 @media (max-width: 768px) {
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
