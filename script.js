@@ -1,3 +1,31 @@
+document.addEventListener("DOMContentLoaded", function () {
+
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbar = document.querySelector(".navbar-collapse");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); 
+
+            const targetId = this.getAttribute("href").substring(1); 
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+
+            if (navbar.classList.contains("show")) {
+                new bootstrap.Collapse(navbar, { toggle: true });
+            }
+        });
+    });
+});
+
+
+
 const products = [
     { id: 1, image: 'images/minisl.png', title: "Shiva Lingam(1cm)", price: 150, description: "Material: Bronze mixed Panchalohas, Height: 1 cm (approx.)" },
     { id: 2, image: 'images/minisl2.png', title: "Shiva Lingam(2.5cm)", price: 300, description: "Material: Bronze mixed Panchalohas, Height: 2.5 cm (approx.)" },
@@ -27,7 +55,8 @@ const products = [
     { id: 24, image: 'images/bell.png', title: "Temple Bell(100kg)", baseWeight: 100, description: "Material: Bronze mixed Panchalohas, Weight: 100 kg, Height: 45.7 cm (approx.), Base Diameter: 54 cm (approx.)" },
 
     { id: 25, image: 'images/jayaganta1.png', title: "Jaya Ganta(500gms)", price: 750, description: "Material: Bronze mixed Panchalohas, Weight: 500 gms (approx.), Diameter: 6 inches (approx.)" },
-    { id: 26, image: 'images/jayaganta2.png', title: "Jaya Ganta(1500gms)", price: 2250, description: "Material: Bronze mixed Panchalohas, Weight: 1.5 kg (approx.), Diameter: 9 inches (approx.)" }
+    { id: 26, image: 'images/jayaganta2.png', title: "Jaya Ganta(1500gms)", price: 2250, description: "Material: Bronze mixed Panchalohas, Weight: 1.5 kg (approx.), Diameter: 9 inches (approx.)" },
+
 ];
 
 
@@ -36,14 +65,20 @@ const WOOD_PRICE_PER_KG = 1800;
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function renderProducts() {
+function renderProducts(productArray = products) {  
     const productList = document.getElementById("product-list");
-    productList.innerHTML = "";
 
-    products.forEach(product => {
+    if (!productList) {
+        console.error("Element with ID 'product-list' not found.");
+        return;
+    }
+
+    productList.innerHTML = ""; 
+
+    productArray.forEach(product => {
+
         let priceHtml = '';
 
-        // Dynamically calculate price for Temple Bells based on weight
         if (product.title.includes("Temple Bell") && product.baseWeight) {
             const metalPrice = product.baseWeight * METAL_PRICE_PER_KG;
             const woodPrice = product.baseWeight * WOOD_PRICE_PER_KG;
@@ -65,42 +100,115 @@ function renderProducts() {
                     <img src="${product.image}" class="card-img-top" alt="${product.title}">
                     <div class="card-body text-center">
                         <h5 class="card-title">${product.title}</h5>
-                        <p class="product-description" id="desc-${product.id}" style="display: none;">${product.description}</p>
+                        <p class="product-description" id="desc-${product.id}" style="display: none;">
+                            ${product.description}
+                        </p>
                         ${priceHtml}
-                        <button class="btn btn-secondary show-more" onclick="toggleDescription(${product.id})">Show More</button>
+                        <button class="btn btn-secondary show-more" onclick="toggleDescription(${product.id})">
+                            Show More
+                        </button>    
                     </div>
                 </div>
             </div>
         `;
     });
+
+    if (productArray.length === 0) {
+        productList.innerHTML = `<p class="text-center mt-3">No products found.</p>`;
+    }
 }
+
 
 
 renderProducts();
 updateCart();
 
-
 function filterProducts() {
-    const searchText = document.getElementById("search-box").value.toLowerCase();
+    const searchText = document.getElementById("search-box").value.toLowerCase().trim();
+    const productList = document.getElementById("product-list");
+
+    if (!productList) {
+        console.error("Element with ID 'product-list' not found.");
+        return;
+    }
+
     const filteredProducts = products.filter(product =>
         product.title.toLowerCase().includes(searchText) ||
         product.description.toLowerCase().includes(searchText)
     );
+
     renderProducts(filteredProducts);
 }
 
-function toggleDescription(productId) {
-    const descElement = document.getElementById(`desc-${productId}`);
-    const button = document.querySelector(`button[onclick="toggleDescription(${productId})"]`);
 
-    if (descElement.style.display === "none" || descElement.style.display === "") {
-        descElement.style.display = "block";
-        button.innerText = "Show Less";
+
+function toggleDescription(productId) {
+    const product = products.find(p => p.id === productId);
+
+    if (!product) return;
+
+    document.getElementById("modal-image").src = product.image;
+    document.getElementById("modal-title").innerText = product.title;
+    document.getElementById("modal-description").innerText = product.description;
+
+    let priceText = "";
+
+    if (product.baseWeight) {
+        const metalPrice = product.baseWeight * METAL_PRICE_PER_KG;
+        const woodPrice = product.baseWeight * WOOD_PRICE_PER_KG;
+
+        priceText = `
+            <select id="modal-material" class="form-control" onchange="updateModalPrice(${product.baseWeight})">
+                <option value="metal" selected>Metal - ₹${metalPrice.toLocaleString("en-IN")}</option>
+                <option value="wood">Wood - ₹${woodPrice.toLocaleString("en-IN")}</option>
+            </select>
+            <p class="card-text mt-2" id="modal-price">Price: ₹${metalPrice.toLocaleString("en-IN")}</p>
+        `;
     } else {
-        descElement.style.display = "none";
-        button.innerText = "Show More";
+        priceText = `<p class="card-text mt-2" id="modal-price">Price: ₹${product.price.toLocaleString("en-IN")}</p>`;
     }
+
+    document.getElementById("modal-price").innerHTML = priceText;
+
+    const modal = document.getElementById("product-modal");
+    const modalContent = document.querySelector(".modal-content");
+
+    modal.style.display = "flex";
+    setTimeout(() => {
+        modal.classList.add("show");
+        modalContent.classList.add("show");
+    }, 50);
 }
+
+function updateModalPrice(baseWeight) {
+    const material = document.getElementById("modal-material").value;
+    const price = material === "metal"
+        ? baseWeight * METAL_PRICE_PER_KG
+        : baseWeight * WOOD_PRICE_PER_KG;
+
+    document.getElementById("modal-price").innerText = `Price: ₹${price.toLocaleString("en-IN")}`;
+}
+
+function closeModal() {
+    const modal = document.getElementById("product-modal");
+    const modalContent = document.querySelector(".modal-content");
+
+    modal.classList.remove("show");
+    modalContent.classList.remove("show");
+
+    setTimeout(() => {
+        modal.style.display = "none";
+    }, 300);
+}
+
+document.getElementById("product-modal").addEventListener("click", function (event) {
+    if (event.target === this) closeModal();
+});
+
+document.getElementById("product-modal").addEventListener("click", function (event) {
+    if (event.target === this) closeModal();
+});
+
 
 function updatePrice(productId) {
     const product = products.find(p => p.id === productId);
@@ -111,7 +219,7 @@ function updatePrice(productId) {
         const price = (material === "metal")
             ? product.baseWeight * METAL_PRICE_PER_KG
             : product.baseWeight * WOOD_PRICE_PER_KG;
-            priceElement.innerText = `Price: ₹${price.toLocaleString("en-IN")}`;
+        priceElement.innerText = `Price: ₹${price.toLocaleString("en-IN")}`;
     }
 }
 
@@ -174,34 +282,6 @@ function renderCart() {
     });
 
     cartTotal.innerText = total;
-}
-
-function increaseQuantity(productId, material) {
-    const item = cart.find(i => i.id === productId && i.material === material);
-    if (item) {
-        item.quantity += 1;
-    }
-    updateCart();
-}
-
-function decreaseQuantity(productId, material) {
-    const item = cart.find(i => i.id === productId && i.material === material);
-    if (item && item.quantity > 1) {
-        item.quantity -= 1;
-    }
-    updateCart();
-}
-
-
-function removeFromCart(productId, material) {
-    cart = cart.filter(item => !(item.id === productId && item.material === material));
-    updateCart();
-}
-
-
-function clearCart() {
-    cart = [];
-    updateCart();
 }
 
 
