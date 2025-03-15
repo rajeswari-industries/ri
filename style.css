@@ -5,7 +5,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #e0f7fa 0%, #f4f6f9 100%);
+    background: linear-gradient(135deg, #b3e5fc 0%, #e1bee7 100%);
     color: #333;
     font-family: 'Roboto', sans-serif;
 }
@@ -15,7 +15,7 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(90deg, #1b1f3b, #243b55);
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
     padding: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -33,7 +33,7 @@ body {
 }
 
 .navbar a:hover {
-    color: #00c897 !important;
+    color: #03a9f4 !important;
 }
 
 .card {
@@ -43,8 +43,8 @@ body {
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s, box-shadow 0.4s;
+    margin-bottom: 20px; /* Add margin to create gap between products */
 }
-
 .card:hover {
     transform: translateY(-7px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
@@ -66,13 +66,13 @@ body {
 .card-title {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1b1f3b;
+    color: #3f51b5;
 }
 
 .card-text {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #00c897;
+    color: #03a9f4;
 }
 
 .btn {
@@ -84,13 +84,13 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(90deg, #00c897, #009f76);
+    background: linear-gradient(90deg, #03a9f4, #0288d1);
     border: none;
     color: #fff;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(90deg, #009f76, #007a5e);
+    background: linear-gradient(90deg, #0288d1, #03a9f4);
     transform: scale(1.05);
 }
 
@@ -102,6 +102,7 @@ body {
 .btn-secondary:hover {
     background-color: #374151;
 }
+
 #cart-items {
     padding: 0;
 }
@@ -125,7 +126,7 @@ body {
 }
 
 .quantity-controls button {
-    background-color: #4CAF50; 
+    background-color: #03a9f4; 
     color: white;
     border: none;
     padding: 5px 10px;
@@ -136,7 +137,7 @@ body {
 }
 
 .quantity-controls button:hover {
-    background-color: #388E3C; 
+    background-color: #0288d1; 
 }
 
 .quantity-controls span {
@@ -159,7 +160,6 @@ body {
 .btn-danger:hover {
     background-color: #c62828;
 }
-
 
 #cart-total {
     font-size: 18px;
@@ -194,7 +194,7 @@ body {
 }
 
 footer {
-    background: linear-gradient(90deg, #1b1f3b, #243b55);
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0);
     color: white;
     padding: 20px;
     margin-top: 40px;
@@ -226,7 +226,7 @@ footer {
 }
 
 .contact-link:hover {
-    color: #007bff;
+    color: #03a9f4;
 }
 
 .cart-item-image {
@@ -244,7 +244,6 @@ footer {
     gap: 10px;
 }
 
-
 .modal-overlay {
     display: none;
     position: fixed;
@@ -259,7 +258,6 @@ footer {
     align-items: center;
     transition: opacity 0.3s ease-in-out;
 }
-
 
 .modal-content {
     background: #fff;
@@ -283,17 +281,18 @@ footer {
     transform: scale(1);
     opacity: 1;
 }
+
 .close-btn {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 30px;
     cursor: pointer;
-    color: #ff4d4d;
+    color: #e53935;
 }
 
 .close-btn:hover {
-    color: red;
+    color: #c62828;
 }
 
 #modal-image {
@@ -308,7 +307,7 @@ footer {
 #modal-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #1b1f3b;
+    color: #3f51b5;
 }
 
 #modal-description {
@@ -320,8 +319,9 @@ footer {
 #modal-price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #00c897;
+    color: #03a9f4;
 }
+
 .modal-content {
     transform: translateY(-20px);
     opacity: 0;
@@ -401,6 +401,7 @@ footer {
     footer {
         font-size: 14px;
     }
+
     .list-group-item {
         flex-direction: column;
         align-items: flex-start;
