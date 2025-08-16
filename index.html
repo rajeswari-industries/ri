@@ -46,10 +46,21 @@
     <section id="home" class="container mt-5 pt-5 text-center">
         <h1>Welcome to Rajeswari Industries</h1>
         <p>Providing top-quality products for all your needs.</p>
-        <h3>Watch How We Manufacture Our Products</h3>
-        <div class="video-container">
+        <!-- <div class="video-container">
             <iframe src="https://www.youtube.com/embed/vG9eBb2jJnE" frameborder="0" allowfullscreen></iframe>
-        </div>
+        </div> -->
+
+        <h3 class="video-heading">Watch How We Manufacture Our Products</h3>
+
+<div class="video-container my-4 text-center">
+    <!-- Banner for PC -->
+    <img src="images/RI.png" alt="Manufacturing Banner" class="banner-img">
+
+    <!-- YouTube video for Mobile -->
+    <iframe class="manufacture-video" src="https://www.youtube.com/embed/vG9eBb2jJnE" 
+            frameborder="0" allowfullscreen></iframe>
+</div>
+
 
         <input type="text" id="search-box" class="form-control mb-3" placeholder="Search for products..."
             onkeyup="filterProducts()">
@@ -57,10 +68,24 @@
     </section>
 
 
-    <section id="products" class="container">
-        <h2 class="text-center mt-4">Our Products</h2>
-        <div class="row" id="product-list"></div>
-    </section>
+<section id="products" class="container">
+    <h2 class="text-center mt-4">Our Products</h2>
+
+    <!-- Category Filter Buttons -->
+   <div class="text-center mb-4 category-buttons">
+    <button class="btn btn-outline-primary m-2" onclick="filterCategory('Shivalingas')">Shivalingas</button>
+    <button class="btn btn-outline-primary m-2" onclick="filterCategory('Hand Bells')">Hand Bells</button>
+    <button class="btn btn-outline-primary m-2" onclick="filterCategory('Temple Bells')">Temple Bells</button>
+    <button class="btn btn-outline-primary m-2" onclick="filterCategory('Jaya Gantalu')">Jaya Gantalu</button>
+    <button class="btn btn-outline-primary m-2" onclick="filterCategory('Bushes')">Bushes</button>
+    <button class="btn btn-primary m-2" onclick="renderProducts()">All Products</button>
+</div>
+
+
+    <!-- Products Grid -->
+    <div class="row" id="product-list"></div>
+</section>
+
 
     <div id="product-modal" class="modal-overlay">
         <div class="modal-content">
