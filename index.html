@@ -1,45 +1,47 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rajeswari Industries</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="icon" href="images/bell.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <h3><i class="fa-solid fa-bell"></i> Rajeswari Industries</h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <!-- MOBILE NAVBAR -->
+    <nav class="navbar navbar-dark bg-dark d-lg-none fixed-top">
+        <div class="container-fluid">
+            <span class="navbar-brand">Rajeswari Industries</span>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
         </div>
     </nav>
 
+    <div class="collapse bg-dark mobile-menu d-lg-none" id="mobileMenu">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </div>
 
-    <section id="home" class="container mt-5 pt-5 text-center">
-        <h1>Welcome to Rajeswari Industries</h1>
-        <p>Providing top-quality brass bells and industrial products for all your needs.</p>
+    <!-- DESKTOP SIDEBAR -->
+    <div class="sidebar d-none d-lg-flex">
+        <h4>Rajeswari Industries</h4>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
 
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
         <div class="my-4 text-center">
             <picture>
                 <!-- Mobile image -->
@@ -50,61 +52,31 @@
                     class="img-fluid mx-auto d-block">
             </picture>
         </div>
+        <section id="home" class="section">
+            <h1>Welcome to Rajeswari Industries</h1>
+            <p>Providing top-quality brass bells and industrial products for all your needs.</p>
 
-        <input type="text" id="search-box" class="form-control mb-3" placeholder="Search for products..."
-            onkeyup="filterProducts()">
+            <input type="text" id="search-box" class="form-control w-50" placeholder="Search products..."
+                onkeyup="filterProducts()">
+        </section>
 
-    </section>
+        <section id="products" class="section">
+            <h2>Our Products</h2>
+            <div id="product-sections"></div>
+        </section>
 
+        <section id="about" class="section">
+            <h2 class="text-center"><b>About Us</b></h2>
+            <p class="text-center">Established in 1960, Rajeswari Industries is a trusted manufacturer and supplier of
+                Bushes, Temple Bells, and Hand Bells. Based in Ajjaram, Andhra Pradesh, we are known for delivering
+                high-quality products with reliable service.
+                As a leading name in the industry, we specialize in bulk orders, ensuring superior craftsmanship and
+                durability. Choose Rajeswari Industries for the best in quality and service.</p>
+        </section>
 
-    <section id="products" class="container">
-        <h2 class="text-center mt-4">Our Products</h2>
-
-        <!-- Category Filter Buttons -->
-        <div class="text-center mb-4 category-buttons">
-            <button class="btn btn-outline-primary m-2" onclick="filterCategory('Shivalingas')">Shivalingas</button>
-            <button class="btn btn-outline-primary m-2" onclick="filterCategory('Hand Bells')">Hand Bells</button>
-            <button class="btn btn-outline-primary m-2" onclick="filterCategory('Temple Bells')">Temple Bells</button>
-            <button class="btn btn-outline-primary m-2" onclick="filterCategory('Jaya Gantalu')">Jaya Gantalu</button>
-            <button class="btn btn-outline-primary m-2" onclick="filterCategory('Bushes')">Bushes</button>
-            <button class="btn btn-primary m-2" onclick="renderProducts()">All Products</button>
-        </div>
-
-
-        <!-- Products Grid -->
-        <div class="row" id="product-list"></div>
-    </section>
-
-
-    <div id="product-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="Product Image">
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <p id="modal-price"></p>
-            <button class="btn btn-secondary" onclick="closeModal()" style="
-    margin-top: -30px;">Close</button>
-        </div>
-    </div>
-
-
-    <section id="about" class="container mt-5">
-        <h2 class="text-center"><b>About Us</b></h2>
-        <p class="text-center">Established in 1960, Rajeswari Industries is a trusted manufacturer and supplier of
-            Bushes, Temple Bells, and Hand Bells. Based in Ajjaram, Andhra Pradesh, we are known for delivering
-            high-quality products with reliable service.
-            As a leading name in the industry, we specialize in bulk orders, ensuring superior craftsmanship and
-            durability. Choose Rajeswari Industries for the best in quality and service.</p>
-    </section>
-
-
-
-    <section id="contact" class="container mt-5">
-        <h2 class="text-center"><b>Contact Us</b></h2>
-        <p class="text-center">Have any questions? Reach out to us!</p>
-        <div class="text-center mt-4">
-            <!-- Contact details here -->
+        <section id="contact" class="section">
+            <h2 class="text-center"><b>Contact Us</b></h2>
+            <p class="text-center text-white">Have any questions? Reach out to us!</p>
             <p>
                 <a href="tel:+919440520050" class="contact-link">
                     <i class="fas fa-phone"></i> +91 94405 20050
@@ -122,44 +94,25 @@
                 </a>
             </p>
 
-        </div>
-    </section>
+        </section>
 
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Shopping Cart</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul id="cart-items" class="list-group"></ul>
-                    <p class="mt-2">Total: ₹<span id="cart-total">0</span></p>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-danger" onclick="clearCart()">Clear Cart</button>
-                    <button class="btn btn-success">Checkout</button>
-                </div>
-            </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <p>&copy; 2025 Rajeswari Industries. All rights reserved.</p>
+    </footer>
+    <!-- MODAL -->
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modal-image">
+            <h5 id="modal-title"></h5>
+            <p id="modal-description"></p>
         </div>
     </div>
 
-
-    <footer class="bg-dark text-white text-center p-3 mt-4">
-        <p>
-            &copy; <span id="year"></span> Rajeswari Industries | All Rights Reserved |
-            <span style="font-style: italic; font-size: 0.9em;">Created by Dhanush</span>
-        </p>
-
-        <script>
-            // Automatically set current year
-            document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>
