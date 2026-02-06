@@ -330,11 +330,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.close-btn:hover {
-    color: var(--brass-light);
-    transform: rotate(90deg) scale(1.1);
-}
-
 @media(max-width: 992px) {
     .sidebar { transform: translateX(-100%); }
     .main-content { margin-left: 0; padding: 140px 1.5rem 2rem; }
@@ -371,3 +366,4 @@ body {
     transform: translateX(8px);
     box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
 }
+
