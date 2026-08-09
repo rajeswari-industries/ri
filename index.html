@@ -1,120 +1,391 @@
-<!DOCTYPE html>
-<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajeswari Industries | Brass & Panchaloha Products</title>
+<meta name="description"
+    content="Rajeswari Industries - Manufacturers and suppliers of Brass Bells, Temple Bells, Hand Bells, Bushes and Panchaloha products since 1960.">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Rajeswari Industries</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <!-- MOBILE NAVBAR -->
-    <nav class="navbar navbar-dark bg-dark d-lg-none fixed-top">
-        <div class="container-fluid">
-            <span class="navbar-brand">Rajeswari Industries</span>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+<header class="navbar-main">
+    <a href="#home" class="brand">
+        <div class="brand-icon">
+            <i class="fa-solid fa-bell"></i>
         </div>
-    </nav>
+        <div class="brand-text">
+            <h2>RAJESWARI</h2>
+            <span>INDUSTRIES</span>
+        </div>
+    </a>
 
-    <div class="collapse bg-dark mobile-menu d-lg-none" id="mobileMenu">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#products" class="nav-link">Products</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
-    </div>
-
-    <!-- DESKTOP SIDEBAR -->
-    <div class="sidebar">
-        <h4>Rajeswari Industries</h4>
-        <a href="#home">Home</a>
+    <nav class="desktop-nav">
+        <a href="#home" class="active">Home</a>
         <a href="#products">Products</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="nav-enquiry">
+        <i class="fa-regular fa-paper-plane"></i>
+        Enquire Now
+    </a>
+
+    <button class="mobile-toggle" type="button" onclick="toggleMobileMenu()" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-header">
+        <span>MENU</span>
+        <button type="button" onclick="closeMobileMenu()" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
     </div>
 
+    <a href="#home" onclick="closeMobileMenu()">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+    </a>
 
-    <!-- MAIN CONTENT -->
-    <div class="main-content">
-        <div class="my-4 text-center">
-            <picture>
-                <!-- Mobile image -->
-                <source media="(max-width: 767px)" srcset="images/Rajeswari Industries VC.png">
-                <!-- Desktop / fallback image -->
-                <source media="(min-width: 768px)" srcset="images/RI.png">
-                <img src="images/Rajeswari industries VC.png" alt="Rajeswari Industries"
-                    class="img-fluid mx-auto d-block">
-            </picture>
+    <a href="#products" onclick="closeMobileMenu()">
+        <i class="fa-solid fa-box-open"></i>
+        <span>Products</span>
+    </a>
+
+    <a href="#about" onclick="closeMobileMenu()">
+        <i class="fa-solid fa-building"></i>
+        <span>About Us</span>
+    </a>
+
+    <a href="#contact" onclick="closeMobileMenu()">
+        <i class="fa-solid fa-phone"></i>
+        <span>Contact</span>
+    </a>
+
+    <a href="#contact" class="mobile-enquiry" onclick="closeMobileMenu()">
+        <i class="fa-regular fa-paper-plane"></i>
+        Enquire Now
+    </a>
+</div>
+
+<main>
+    <section id="home" class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-label">
+                <span></span>
+                ESTABLISHED 1960
+                <span></span>
+            </div>
+
+            <h1>
+                The Art of
+                <strong>Brass Craftsmanship</strong>
+            </h1>
+
+            <p>
+                Quality brass products crafted with traditional expertise and trusted for generations.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary-custom">
+                    <span>Explore Collection</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#about" class="btn-outline-custom">
+                    <span>Discover Our Story</span>
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>60+</strong>
+                    <span>Years of Trust</span>
+                </div>
+
+                <div>
+                    <strong>100+</strong>
+                    <span>Products</span>
+                </div>
+
+                <div>
+                    <strong>Quality</strong>
+                    <span>Craftsmanship</span>
+                </div>
+            </div>
         </div>
-        <section id="home" class="section">
-            <h1>Welcome to Rajeswari Industries</h1>
-            <p>Providing top-quality brass bells and industrial products for all your needs.</p>
+    </section>
 
-            <input type="text" id="search-box" class="form-control w-50" placeholder="Search products..."
-                onkeyup="filterProducts()">
-        </section>
+    <section class="intro-section">
+        <div class="intro-title">
+            <span class="section-label">RAJESWARI INDUSTRIES</span>
+            <h2>
+                Crafted with tradition.
+                <br>
+                <span>Built to last.</span>
+            </h2>
+        </div>
 
-        <section id="products" class="section">
-            <h2>Our Products</h2>
-            <div id="product-sections"></div>
-        </section>
+        <p>
+            From traditional temple bells to finely crafted brass products, Rajeswari Industries combines generations of
+            craftsmanship with dependable quality.
+        </p>
+    </section>
 
-        <section id="about" class="section">
-            <h2 class="text-center"><b>About Us</b></h2>
-            <p class="text-center">Established in 1960, Rajeswari Industries is a trusted manufacturer and supplier of
-                Bushes, Temple Bells, and Hand Bells. Based in Ajjaram, Andhra Pradesh, we are known for delivering
-                high-quality products with reliable service.
-                As a leading name in the industry, we specialize in bulk orders, ensuring superior craftsmanship and
-                durability. Choose Rajeswari Industries for the best in quality and service.</p>
-        </section>
+    <section id="products" class="products-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">OUR COLLECTION</span>
+                <h2>Explore Our Products</h2>
+            </div>
 
-        <section id="contact" class="section">
-            <h2 class="text-center"><b>Contact Us</b></h2>
-            <p class="text-center text-white">Have any questions? Reach out to us!</p>
             <p>
-                <a href="tel:+919440520050" class="contact-link">
-                    <i class="fas fa-phone"></i> +91 94405 20050
-                </a>
+                Discover our range of traditionally crafted brass and Panchaloha products.
             </p>
+        </div>
+
+        <div class="catalog-tools">
+            <div class="catalog-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-box" placeholder="Search products..." autocomplete="off"
+                    onkeyup="filterProducts()">
+                <button type="button" id="clear-search" onclick="clearSearch()" aria-label="Clear search">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div id="category-filter" class="category-filter"></div>
+        </div>
+
+        <div id="product-sections"></div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-image">
+            <div class="about-overlay">
+                <span>ESTABLISHED</span>
+                <strong>1960</strong>
+                <small>Trusted Craftsmanship</small>
+            </div>
+        </div>
+
+        <div class="about-content">
+            <span class="section-label">OUR STORY</span>
+
+            <h2>
+                Generations of
+                <span>craftsmanship.</span>
+            </h2>
+
             <p>
-                <a href="mailto:rajeswariind@ymail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i> rajeswariind@ymail.com
-                </a>
-            </p>
-            <p>
-                <a href="https://maps.app.goo.gl/JQgqVdGzjSAGSCLB9" target="_blank" class="contact-link">
-                    <i class="fas fa-map-marker-alt"></i> Dr No:- 4-242, Ajjaram - 534331,<br>
-                    Peravali Mandal, W.G. Dt., A.P.
-                </a>
+                Established in 1960, Rajeswari Industries is a trusted manufacturer and supplier of Brass Bushes, Temple
+                Bells, Hand Bells and traditional products.
             </p>
 
-        </section>
+            <p>
+                Based in Ajjaram, Andhra Pradesh, our work combines traditional craftsmanship with consistent quality
+                and reliable service.
+            </p>
 
+            <div class="about-points">
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Quality Materials</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Traditional Craftsmanship</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Bulk Orders Available</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    <span>Reliable Service</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-section">
+        <div class="section-heading centered">
+            <span class="section-label">WHY RAJESWARI INDUSTRIES</span>
+            <h2>Why Choose Us?</h2>
+        </div>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+                <h3>Trusted Since 1960</h3>
+                <p>
+                    Decades of experience and customer trust built through consistent quality.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-gem"></i>
+                </div>
+                <h3>Quality Craftsmanship</h3>
+                <p>
+                    Carefully crafted products with attention to finish, durability and detail.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+                <h3>Bulk Orders</h3>
+                <p>
+                    Reliable supply for retailers, businesses, temples and bulk requirements.
+                </p>
+            </div>
+
+            <div class="why-card">
+                <div class="why-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3>Reliable Service</h3>
+                <p>
+                    Professional service focused on long-term customer relationships.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-heading">
+                <span class="section-label">GET IN TOUCH</span>
+
+                <h2>
+                    Let's build something
+                    <span>lasting.</span>
+                </h2>
+
+                <p>
+                    Looking for brass products or interested in placing a bulk order? Get in touch with us.
+                </p>
+
+                <a href="https://wa.me/919440520050" target="_blank" rel="noopener" class="contact-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Chat on WhatsApp
+                </a>
+            </div>
+
+            <div class="contact-details">
+                <a href="tel:+919440520050" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+
+                    <div>
+                        <span>CALL US</span>
+                        <strong>+91 94405 20050</strong>
+                    </div>
+                </a>
+
+                <a href="mailto:rajeswariind@ymail.com" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                    <div>
+                        <span>EMAIL US</span>
+                        <strong>rajeswariind@ymail.com</strong>
+                    </div>
+                </a>
+
+                <a href="https://maps.app.goo.gl/JQgqVdGzjSAGSCLB9" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <span>VISIT US</span>
+                        <strong>Ajjaram, Andhra Pradesh</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-main">
+        <div class="footer-brand">
+            <h2>RAJESWARI</h2>
+            <span>INDUSTRIES</span>
+            <p>Traditional craftsmanship. Trusted quality.</p>
+        </div>
+
+        <div class="footer-links">
+            <h4>QUICK LINKS</h4>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-links">
+            <h4>CONTACT</h4>
+            <a href="tel:+919440520050">+91 94405 20050</a>
+            <a href="mailto:rajeswariind@ymail.com">rajeswariind@ymail.com</a>
+            <span>Ajjaram, Andhra Pradesh</span>
+        </div>
     </div>
-    <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center py-4 mt-5">
-        <p>&copy; 2025 Rajeswari Industries. All rights reserved.</p>
-    </footer>
-    <!-- MODAL -->
-    <div id="product-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <img id="modal-image">
+
+    <div class="footer-bottom">
+        <span>© 2026 Rajeswari Industries. All rights reserved.</span>
+        <span>Brass craftsmanship since 1960</span>
+    </div>
+</footer>
+
+<div id="product-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="close-btn" type="button" onclick="closeModal()" aria-label="Close product details">
+            &times;
+        </button>
+
+        <div class="modal-image-wrapper">
+            <img id="modal-image" src="" alt="Product">
+        </div>
+
+        <div class="modal-info">
+            <span class="modal-label">RAJESWARI INDUSTRIES</span>
             <h5 id="modal-title"></h5>
             <p id="modal-description"></p>
+
+            <a id="modal-whatsapp" href="https://wa.me/919440520050" target="_blank" rel="noopener"
+                class="modal-enquiry">
+                <i class="fa-brands fa-whatsapp"></i>
+                Enquire About This Product
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
-</body>
+<a href="https://wa.me/919440520050" target="_blank" rel="noopener" class="floating-whatsapp"
+    aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
-</html>
+<button id="back-to-top" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
