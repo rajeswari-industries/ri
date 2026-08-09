@@ -31,7 +31,9 @@ const products = [
 
   // Jaya Gantalu
   { id: 25, image: 'images/jayaganta1.png', title: "Jaya Ganta(500gms)", category: "Jaya Gantalu", description: "Material: Bronze mixed Panchalohas, Weight: 500 gms (approx.), Diameter: 6 inches (approx.)" },
-  { id: 26, image: 'images/jayaganta2.png', title: "Jaya Ganta(1500gms)", category: "Jaya Gantalu", description: "Material: Bronze mixed Panchalohas, Weight: 1.5 kg (approx.), Diameter: 9 inches (approx.)" }
+  { id: 26, image: 'images/jayaganta2.png', title: "Jaya Ganta(1500gms)", category: "Jaya Gantalu", description: "Material: Bronze mixed Panchalohas, Weight: 1.5 kg (approx.), Diameter: 9 inches (approx.)" },
+  { id: 27, image: 'images/holder.jpeg', title: "Brass Utility Collection", category: "Brass Utility Products", description: "Includes Paper Weight, Pen Stand and Agarbatti Stand. Material: Brass, suitable for office, home and traditional use." }
+
 ];
 
 function renderSections(list = products) {
